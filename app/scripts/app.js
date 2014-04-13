@@ -6,6 +6,8 @@ define([
     var App = {};
 
     App.init = function() {
+
+        
         var Jobs = new JobModel();
 
         console.log( Jobs.get('title') );
