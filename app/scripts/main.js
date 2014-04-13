@@ -12,18 +12,23 @@ require.config({
                 'jquery'
             ],
             exports: 'Backbone'
+        },
+        'facebook' : {
+            exports: 'FB'
         }
     },
     paths: {
         jquery: '../bower_components/jquery/dist/jquery',
         backbone: '../bower_components/backbone/backbone',
-        underscore: '../bower_components/underscore/underscore'
+        underscore: '../bower_components/underscore/underscore',
+        'facebook': '//connect.facebook.net/en_US/all'
     }
 });
 
 require([
     'backbone',
-    'routers/main'
+    'routers/main',
+    'fb'
 ], function (Backbone, MainRouter) {
 
     var router = new MainRouter();
