@@ -14,12 +14,23 @@ body {
     width: 300px;
 }
 
-.user {
+header {
     display: block;
+    background-color: #000;
     height:60px;
-    background: #000;
+}
+
+.server_info {
+    position:absolute;
+    vertical-align: top;
+    display:inline;
     color:#FFF;
-    line-height: 60px;
+}
+
+.user {
+    position:absolute;
+    right:0;
+    color:#FFF;
 }
 
 .map-canvas {

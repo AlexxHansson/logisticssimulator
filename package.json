@@ -4,7 +4,9 @@
   "dependencies": {
     "socket.io": "~0.9.16",
     "express": "~4.0.0",
-    "http": "0.0.0"
+    "http": "0.0.0",
+    "cron": "~1.0.4",
+    "time": "~0.10.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

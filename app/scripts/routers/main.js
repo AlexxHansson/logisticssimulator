@@ -15,16 +15,22 @@ define([
         },
 
         initialize: function() {
-            console.log('connecting to server...');
+            $('#server_status').html('connecting to server');
 
             socket.on('connected', function() {
-                console.log('connected to server');
+                $('#server_status').html('ok');
+            });
+            
+            socket.on('time', function (data){
+                $('#server_time').html(data);
             });
 
+            /*
             socket.on('news', function (data) {
                 console.log(data);
                 socket.emit('my other event', { my: 'data' });
             });
+            */
 
             console.log('finding location...');
             navigator.geolocation.getCurrentPosition(function(response){
