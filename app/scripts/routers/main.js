@@ -1,14 +1,17 @@
 define([
     'backbone',
     'app',
-    'socket'
-], function (Backbone, App, socket){
+    'socket',
+    'facebook',
+    'models/user'
+], function (Backbone, App, socket, FB, User){
     'use strict';
 
     var MainRouter = Backbone.Router.extend({
         routes: {
             '': 'index',
-            'jobs': 'jobs'
+            'jobs': 'jobs',
+            'login': 'login'
         },
 
         initialize: function() {
@@ -26,11 +29,19 @@ define([
 
         index: function() {
             console.log('index');
-            App.init();
+            User.on('change:first_name', function() {
+                $('#user').append('<img src="'+User.get('profile_pic')+'" />');
+                $('#user').append(User.get('first_name')+' '+User.get('last_name'));
+            });
+            
         },
 
         jobs: function() {
             console.log('jobs');
+        },
+
+        login: function() {
+            console.log('login');
         }
     });
 
