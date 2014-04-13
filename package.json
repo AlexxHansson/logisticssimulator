@@ -1,7 +1,11 @@
 {
-  "name": "yeoman",
-  "version": "0.0.0",
-  "dependencies": {},
+  "name": "logistics_simulator",
+  "version": "0.0.1",
+  "dependencies": {
+    "socket.io": "~0.9.16",
+    "express": "~4.0.0",
+    "http": "0.0.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.5.0",
