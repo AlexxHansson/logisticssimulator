@@ -1,7 +1,8 @@
 define([
     'backbone',
-    'app'
-], function (Backbone, App){
+    'app',
+    'socket'
+], function (Backbone, App, socket){
     'use strict';
 
     var MainRouter = Backbone.Router.extend({
@@ -11,7 +12,12 @@ define([
         },
 
         initialize: function() {
-            var socket = io.connect('http://localhost:8000');
+            console.log('connecting to server...');
+
+            socket.on('connected', function() {
+                console.log('connected to server');
+            });
+
             socket.on('news', function (data) {
                 console.log(data);
                 socket.emit('my other event', { my: 'data' });
