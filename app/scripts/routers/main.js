@@ -25,6 +25,19 @@ define([
                 console.log(data);
                 socket.emit('my other event', { my: 'data' });
             });
+
+            navigator.geolocation.getCurrentPosition(function(response){
+                User.set('coords', response.coords);
+                var mapOptions = {
+                    center: new google.maps.LatLng(User.get('coords').latitude, User.get('coords').longitude),
+                    zoom: 16
+                };
+                var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+
+                google.maps.event.addDomListener(window, 'load', this);
+            });
+
+            
         },
 
         index: function() {
